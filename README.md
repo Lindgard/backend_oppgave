@@ -12,9 +12,17 @@
 Bruke w3schools og input i console til å generere et resultat basert på en
 switch/if.
 
+## How to
+
+Start programmet med følgende kommando
+
+```sh
+dotnet run
+```
+
 ### Theme
 
-Temperatur.
+Temperatur gitt som input i terminal.
 
 ### Pseudocode
 
