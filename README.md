@@ -41,3 +41,19 @@ PRINT "Enter a temperature in Celsius:"
                   BREAK
 
             CASE temperature > 15 AND temperature <= 25:
+                  PRINT "The weather is mild."
+                  BREAK
+
+            CASE temperature > 25 AND temperature <= 35:
+                  PRINT "It's really warm outside."
+                  BREAK
+
+            CASE temperature > 35:
+                  PRINT "It's stupid hot outside."
+                  BREAK
+
+            DEFAULT:
+                  PRINT "Unknown temperature range."
+      END SWITCH
+
+END FUNCTION
