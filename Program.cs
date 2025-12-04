@@ -6,15 +6,21 @@ class Program
     {
         while (true)
         {
+            //* Welcome-message and information about how to close the program
             Console.WriteLine("Enter a temperature in Celsius:\n type exit to stop program.");
-
+            //* Reading the input typed in terminal/console 
+            //* and creating a variable for the input
             string? input = Console.ReadLine();
-
+            //* checks if the user typed exit to close the program
             if (input?.ToLower() == "exit")
             {
                 Console.WriteLine("Goodbye!");
-                break;
+                break; //* Closes the program with a farewell-message
             }
+
+            //* The switch looped through for the correct response
+            //* depending on input converted in the TryParse to 
+            //* an integer called temperature
             if (int.TryParse(input, out int temperature))
             {
                 switch (temperature)
@@ -32,11 +38,15 @@ class Program
                         break;
 
                     case > 25 and <= 35:
-                        Console.WriteLine("It's pretty hot outside.");
+                        Console.WriteLine("It's pretty hot, but still comfortable outside.");
                         break;
 
-                    case > 35:
-                        Console.WriteLine("It's stupid hot outside.");
+                    case > 35 and <= 45:
+                        Console.WriteLine("It's very very hot outside.");
+                        break;
+
+                    case > 45:
+                        Console.WriteLine("It's dangerous to be outside too long.");
                         break;
                 }
             }
