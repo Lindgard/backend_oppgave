@@ -3,10 +3,9 @@
 ## Todo
 
 - [x] bestemme meg for hva switchen skal gjelde
-- [ ] Pseudokode som viser plan
-- [ ] Lag nødvendige filer (Interface, class, controller?) for MVC design
-      pattern
-- [ ] skrive enkle løsninger som ikke er for store i scope
+- [x] Pseudokode som viser plan
+- [x] skrive enkle løsninger som ikke er for store i scope
+- [ ] Se på å legge til Fahrenheit conversion.
 
 ## Mål med programmet
 
