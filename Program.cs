@@ -24,7 +24,7 @@ class Program
 
             //* The switch looped through for the correct response
             //* depending on input converted in the TryParse to 
-            //* an integer called temperature
+            //* an integer called temperature. Colorcoded responses.
             if (int.TryParse(input, out int temperature))
             {
                 switch (temperature)
