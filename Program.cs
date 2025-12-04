@@ -68,7 +68,9 @@ class Program
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("Invalid input. Please enter a valid number.");
+                Console.ResetColor();
             }
             Console.WriteLine(); // Adding a blank line for readability reasons
         }
