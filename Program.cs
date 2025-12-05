@@ -4,11 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {
+        //* Selection of temperature units that you wish to base responses on.
+        Console.WriteLine("Select a temperature unit:");
+        Console.WriteLine("1 = Celsius");
+        Console.WriteLine("2 = Fahrenheit");
+        Console.Write("Choice: ");
+
+        string? choice = Console.ReadLine()?.Trim();
+        bool useCelsius = choice == "1";
+
+        Console.WriteLine();
+        Console.WriteLine($"You selected {(useCelsius ? "Celsius" : "Fahrenheit")} mode.");
+        Console.WriteLine();
+
         while (true)
         {
             //* Welcome-message and information about how to close the program
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Enter a temperature in Celsius:\n type exit to stop program.");
+            Console.WriteLine($"Enter a temperature in {(useCelsius ? "Celsius" : "Fahreinheit")}: \n type exit to stop program.");
             Console.ResetColor();
             //* Reading the input typed in terminal/console 
             //* and creating a variable for the input
@@ -22,13 +35,24 @@ class Program
                 break; //* Closes the program with a farewell-message with a colorchange
             }
 
-            //* The switch looped through for the correct response
-            //* depending on input converted in the TryParse to 
-            //* an integer called temperature. Colorcoded responses.
-            if (double.TryParse(input, out double temperatureCelsius))
+            //* Parses input into a double for giving a response.
+            if (double.TryParse(input, out double temperatureInput))
             {
-                //* Added Fahrenheit conversion for added options.
-                double temperatureFahrenheit = (temperatureCelsius * 9.0 / 5.0) + 32;
+
+                double temperatureCelsius;
+                double temperatureFahrenheit;
+
+                //* converts between Fahrenheit and celsius
+                if (useCelsius)
+                {
+                    temperatureCelsius = temperatureInput;
+                    temperatureFahrenheit = (temperatureCelsius * 9.0 / 5.0) + 32;
+                }
+                else
+                {
+                    temperatureFahrenheit = temperatureInput;
+                    temperatureCelsius = (temperatureInput - 32) * 5.0 / 9.0;
+                }
 
                 switch (temperatureCelsius)
                 {
