@@ -126,10 +126,11 @@ class Program
                 Console.WriteLine("Invalid input. Please enter a valid number.");
                 Console.ResetColor();
             }
-            Console.WriteLine(); // Adding a blank line for readability reasons
+            Console.WriteLine(); //* Adding a blank line for readability reasons
         }
-
     }
+
+    //* Prints the header of the program
     static void PrintHeader()
     {
         Console.Clear();
