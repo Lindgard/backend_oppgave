@@ -17,6 +17,12 @@ terminalen.
 
 ## How to
 
+Initier nix
+
+```sh
+nix develop
+```
+
 Start programmet med følgende kommando
 
 ```sh
