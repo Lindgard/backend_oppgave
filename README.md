@@ -5,7 +5,8 @@
 - [x] bestemme meg for hva switchen skal gjelde
 - [x] Pseudokode som viser plan
 - [x] skrive enkle løsninger som ikke er for store i scope
-- [ ] Se på å legge til Fahrenheit conversion.
+- [x] Se på å legge til Fahrenheit conversion.
+- [ ] gjøre Fahrenheit og Celsius optional
 
 ## Mål med programmet
 
@@ -26,8 +27,7 @@ Temperatur gitt som input i terminal.
 
 ### Pseudocode
 
-FUNCTION Main()
-PRINT "Enter a temperature in Celsius:"
+FUNCTION Main() PRINT "Enter a temperature in Celsius:"
 
       READ userInput
 
