@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        PrintHeader();
+        HeaderPrinter.PrintHeader();
         //* Selection of temperature units that you wish to base responses on.
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Select a temperature unit:");
@@ -64,57 +64,15 @@ class Program
                     temperatureFahrenheit = temperatureInput;
                     temperatureCelsius = (temperatureInput - 32) * 5.0 / 9.0;
                 }
-
                 //* some UX-focus in wrapping the responses in a little bit of a frame.
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(">>>>>>>>>>>>>>RESULT<<<<<<<<<<<<<<");
                 Console.WriteLine();
 
-                switch (temperatureCelsius)
-                {
-                    case <= 0:
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("It's freezing cold outside.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
+                DateTimePrinter.PrintDateTime();
+                TemperatureSwitch.PrintTemperatureMessage(temperatureCelsius, temperatureFahrenheit);
 
-                    case > 0 and <= 15:
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("It's pretty chilly outside.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
-
-                    case > 15 and <= 25:
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("The weather is mild and comfortable.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
-
-                    case > 25 and <= 35:
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("It's pretty hot, but still comfortable outside.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
-
-                    case > 35 and <= 45:
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("It's very very hot outside.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
-
-                    case > 45:
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine("It's dangerous to be outside too long.");
-                        Console.WriteLine($"({temperatureCelsius:F1}°C / {temperatureFahrenheit:F1}°F)");
-                        Console.ResetColor();
-                        break;
-                }
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(">>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<");
@@ -126,20 +84,7 @@ class Program
                 Console.WriteLine("Invalid input. Please enter a valid number.");
                 Console.ResetColor();
             }
-            Console.WriteLine(); //* Adding a blank line for readability reasons
+            Console.WriteLine(); // Adding a blank line for readability reasons
         }
-    }
-
-    //* Prints the header of the program
-    static void PrintHeader()
-    {
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("=================================");
-        Console.WriteLine("   Temperature Advisor 6000   ");
-        Console.WriteLine("=================================");
-        Console.ResetColor();
-        Console.WriteLine();
-
     }
 }
